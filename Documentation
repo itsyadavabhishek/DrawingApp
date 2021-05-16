@@ -1,0 +1,18 @@
+// this is the doc for Kids Drawing app 
+Start date: 01/05/2021
+Target end date :  01/05/2021
+
+
+
+//
+1.make  activity portait in manifest.
+2.create a class DrawingView of type View.
+ create an internal inner class CustomPath
+
+make the Third video main functionality of canvas.
+
+add arraylist for saving the draw fig as path.
+
+not implemented the 106 video i.e abt setting the canvas background
+
+https://www.notion.so/Android-Test-2bf41a5e78b94b67bfd67ba07b116d76

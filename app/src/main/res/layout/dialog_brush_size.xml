@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_brush_size"
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/ib_small"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="image_small"
+        android:src="@drawable/small"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ib_medium" />
+    <ImageButton
+        android:id="@+id/ib_medium"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="image_small"
+        android:src="@drawable/small"
+        app:layout_constraintBottom_toBottomOf="@id/ib_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/ib_large" />
+
+    <ImageButton
+        android:id="@+id/ib_large"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:contentDescription="image_small"
+        android:src="@drawable/small"
+        app:layout_constraintBottom_toBottomOf="@id/ib_medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
