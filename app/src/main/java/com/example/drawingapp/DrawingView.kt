@@ -17,6 +17,7 @@ class DrawingView(context: Context, attr: AttributeSet) : View(context, attr) {
     private var canvas: Canvas? = null
     private val mPaths = ArrayList<CustomPath>()
     private val mUndopaths = ArrayList<CustomPath>()
+    private val mRedopaths = ArrayList<CustomPath>()
 
     init {
         setUpDrawing()
@@ -28,6 +29,20 @@ class DrawingView(context: Context, attr: AttributeSet) : View(context, attr) {
             invalidate()
         }
 
+    }
+
+    fun onClickClear(){
+        if(mPaths.size>0){
+          mPaths.removeAll(mPaths)
+            invalidate()
+        }
+    }
+
+    fun onClickRedo(){
+        if (mUndopaths.size>0){
+            mPaths.add(mUndopaths.removeAt(mUndopaths.size-1))
+            invalidate()
+        }
     }
 
     private fun setUpDrawing() {

@@ -13,15 +13,20 @@ import android.net.Uri
 import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.View
+import android.util.Log
+import android.view.*
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.get
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.dialog_brush_size.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -32,11 +37,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_DrawingApp)
+        GlobalScope.launch {
+            delay(2000)
+        }
         setContentView(R.layout.activity_main)
 
-
-
         drawing_view.setSizeForBrush(20.toFloat())
+
         ib_brush.setOnClickListener {
             showBrushSizeChooserDialog()
         }
@@ -73,7 +81,85 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
         )
 
+
+
+
+
     }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main,menu)
+        return true
+
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+       when(item.itemId) {
+           R.id.clear_area -> {
+               //clear area func.
+               drawing_view.onClickClear()
+               Log.e("Tag", "onOptionsItemSelected:clear area func. ",)
+               return true
+           }
+           R.id.redo -> {
+               //fuc for redo
+               drawing_view.onClickRedo()
+               return true
+           }
+           R.id.more_colors -> {
+               //fuc for more colors
+               return true
+           }
+           R.id.change_background -> {
+               //fuc for change background color
+
+
+               return true
+           }
+           R.id.about -> {
+               //fuc to tell about us
+               Toast.makeText(this, "This is Simple Drawing application built for kids " +
+                       "to learn about the colours and Images.  ", Toast.LENGTH_SHORT).show()
+               return true
+           }
+           R.id.exit -> {
+               finish()
+               return true
+           }
+           R.id.image1 ->{
+
+               iv_background.setImageResource(R.drawable.image1)
+               return true
+           }
+           R.id.image2 ->{
+
+               iv_background.setImageResource(R.drawable.image2)
+               return true
+           }
+           R.id.image3 ->{
+
+               iv_background.setImageResource(R.drawable.image3)
+               return true
+           }
+           R.id.image4 ->{
+
+               iv_background.setImageResource(R.drawable.image4)
+               return true
+           }
+           R.id.image5 ->{
+
+               iv_background.setImageResource(R.drawable.image5)
+               return true
+           }
+           else -> return super.onOptionsItemSelected(item)
+       }
+    }
+
+
+
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)

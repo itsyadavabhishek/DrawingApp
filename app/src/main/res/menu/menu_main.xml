@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="ExtraText">
+
+    <item
+        android:id="@+id/clear_area"
+
+        android:title="Clear Drawing Area" />
+
+    <item
+        android:id="@+id/redo"
+        android:title="Redo" />
+
+    <item
+        android:id="@+id/more_colors"
+        android:title="More Colors (Coming soon)" />
+
+    <item
+        android:id="@+id/add_list"
+        android:title="add List (Coming soon)" />
+
+    <item
+        android:id="@+id/change_background"
+        android:icon="@drawable/ic_baseline_add_a_photo"
+        android:title="Change background"
+        app:showAsAction="always">
+
+        <menu>
+            <item
+                android:id="@+id/image1"
+                android:title="Giraffe"
+                />
+            <item
+                android:id="@+id/image2"
+                android:title="Fruits" />
+            <item
+                android:id="@+id/image3"
+                android:title="Elephant" />
+            <item
+                android:id="@+id/image4"
+                android:title="Bird" />
+            <item
+                android:id="@+id/image5"
+                android:title="Crocodile" />
+        </menu>
+    </item>
+
+
+    <item
+        android:id="@+id/about"
+
+        android:title="About us" />
+
+    <item
+        android:id="@+id/exit"
+
+        android:title="Exit" />
+
+</menu>
