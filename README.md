@@ -11,8 +11,7 @@ Programming Language : kotlin
 Android Components : Permissions, Intent, Splash Screen, Couroutines, Canvas, Menu, Constraint Layout
 Tools: Github
 
-
-
-
+ScreenShot:
+https://github.com/itsyadavabhishek/DrawingApp/issues/1#issue-899451622
 
 
